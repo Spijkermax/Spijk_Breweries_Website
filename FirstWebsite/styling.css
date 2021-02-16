@@ -1,0 +1,162 @@
+body {
+font-family:monospace;
+text-align:center;
+background-color:lightblue;
+}
+html {
+  scroll-behavior: smooth;
+}
+table {
+	width:100%;
+	color: green;
+	border-style:dotted;
+	font-family:monospace;
+	font-size: 25px;
+	text-align: center;
+}
+footer {
+	color: white;
+	font-size: 20px;
+	font-style: Anton;
+}
+button {
+	background-color: white;
+	font-size: 20px;
+	border: none;
+}
+h1 {
+	font-family:monospace;
+	font-size: 60px;
+	color: #692baa;
+	text-decoration: overline;
+}
+h2 {
+	font-size: 45px;
+	color: #692baa;
+}
+h3 {
+	font-size:35px;
+}
+h4 {
+	font-size:25px;
+	color:#692baa;
+	text-decoration: underline;
+}
+p {
+	font-family: sans-serif;
+	font-size: 30px;
+}
+pre {
+	font-family:Anton;
+	font-size: 30px;
+	text-align:left;
+}
+.beer1, .beer2, .beer3, .beer4 {
+	text-align:center;
+	padding: 10px;
+	border-style:dotted;
+}
+form > label,input {
+	font-size: 30px;
+}
+h2 > form {
+	text-decoration: underline;
+}
+
+/* this wrapper goes around all of the parts of the body in the html that need to fit into the grid */
+
+@media(min-width: 768px) { /* desktop */
+
+	.adminloginfields {
+	position:fixed;
+	left:50%;
+	top:50%;
+	}
+
+.pagewrapper {
+	display: grid;
+grid-template-columns: repeat(6, 1fr); /* there will be six columns that fit the whole screen width (1 factorial ratio) */
+grid-auto-rows: minmax(50px, auto); /* columns are a minimum size of 50px and automatically grow depending on the amount of contents that need rows */
+grid-column-gap: 25px;
+	grid-template-areas: /* this will allow me to designate areas for the template. Each area is one cell */
+	'logo head head head head login'
+	'side main1 main1 main1 main1 blank'
+	'side main2 main2 main2 main2 blank'
+	'side product1 product2 product3 product4 blank'
+	'side main3 main3 main3 main3 blank'
+	'side main4 main4 main4 main4 blank'
+	'side booking booking orders orders blank'
+	'footer footer footer footer footer footer'
+}
+
+/* all of the different classes that are being put into the grid areas */
+.headerlogo {
+	grid-area: logo;
+	position:fixed;
+/* grid-column: 2/6; could make each grid section this way but then it wont be as easy to change a section placement
+	grid-row: 1; */
+}
+.headertitle {
+	grid-area: head;
+}
+.adminlogin {
+	grid-area: login;
+}
+
+.sidenav {
+	grid-area:side;
+position:fixed;
+top:25%;
+}
+.aboutussection {
+	border-top-style:dotted;
+	grid-area:main1;
+/*	background-color: darkblue; */
+}
+.productsection {
+	grid-area:main2;
+/*	background-color: darkblue; */
+}
+.beer1 {
+	grid-area: product1;
+}
+.beer2 {
+	grid-area: product2;
+}
+.beer3 {
+	grid-area: product3;
+}
+.beer4 {
+	grid-area:product4;
+}
+.teamsection {
+	grid-area:main3;
+	text-align:center;
+/*	background-color:darkblue; */
+}
+.gallery {
+	text-align: center;
+}
+.locationsection {
+	grid-area:main4;
+/*	background-color:darkblue; */
+}
+.bookingsection {
+	grid-area:booking;
+	border-right-style: dotted;
+		border-left-style: dotted;
+	border-top-style:dotted;
+/*	background-color: darkblue; */
+}
+.ordersection {
+	grid-area:orders;
+	border-left-style: dotted;
+		border-right-style: dotted;
+	border-top-style:dotted;
+}
+.footersection {
+	grid-area:footer;
+	background-color: darkblue;
+/*	background-color: darkblue; */
+}
+}
